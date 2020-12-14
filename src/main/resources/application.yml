@@ -39,7 +39,7 @@ spring:
 
 # 配置邮件接收者邮箱
 mail:
-  receive: 自己接收邮件的邮箱
+  receive: # 自己接收邮件的邮箱
 
 # 配置微信发送
 wx:
