@@ -33,7 +33,7 @@ public class SendController {
         LocalDateTime startTime = orderTime.minusMinutes(10);
         LocalDateTime endTime = orderTime.plusMinutes(10);
         zhiHuMoneyManage.queryFromJd(startTime, endTime);
-        return "检查微信消息";
+        return "请检查检查邮件或微信消息";
     }
 
 }
