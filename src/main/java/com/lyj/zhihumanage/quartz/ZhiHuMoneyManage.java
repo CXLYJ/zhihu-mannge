@@ -41,6 +41,8 @@ public class ZhiHuMoneyManage {
     private Boolean openMail;
     @Value("${open.wx}")
     private Boolean openWx;
+    @Value("${open.filterPaid}")
+    private Boolean openFilterPaid;
 
 
     @Scheduled(cron = "${lyj.quartz.task}")
@@ -73,11 +75,22 @@ public class ZhiHuMoneyManage {
      */
     private void packageContentAndSendMail(JSONArray dataArr) {
 
+
+
         String title = "老板出单了啊,金额:";
         BigDecimal totalMoney = BigDecimal.ZERO;
         StringBuilder contentBuilder = new StringBuilder();
         for (int i = 0; i < dataArr.size(); i++) {
             JSONObject data = dataArr.getJSONObject(i);
+
+            // 过滤已付款
+            // validCode = 16 是已付款 如果不是 已付款直接返回
+           if (openFilterPaid){
+               if (!data.getInteger("validCode").equals(16)) {
+                   return;
+               }
+           }
+
             BigDecimal estimateFee = data.getBigDecimal("estimateFee");
             totalMoney = totalMoney.add(estimateFee);
             String skuName = data.getString("skuName");
