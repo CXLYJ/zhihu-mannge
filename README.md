@@ -18,6 +18,7 @@ app:
 open:
   mail: true # 开启邮件通知
   wx: false # 开启微信通知
+  filterPaid: true # 是否开启过滤未付款订单
 
 
 
