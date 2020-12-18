@@ -83,7 +83,7 @@ public class ZhiHuMoneyManage {
         for (int i = 0; i < dataArr.size(); i++) {
             JSONObject data = dataArr.getJSONObject(i);
 
-            // 过滤已付款
+            // 过滤未付款
             // validCode = 16 是已付款 如果不是 已付款直接返回
            if (openFilterPaid){
                if (!data.getInteger("validCode").equals(16)) {

@@ -63,8 +63,8 @@ lyj:
 
 # 注意事项
 你只需要配置下你自己邮件发送所需要的参数就行
-可以先参考下这篇文章：https://www.cnblogs.com/joker-dj/p/12693557.html
-后续我自己再更新一篇操作文档
+教程可以参考下我写的这篇文章：https://mp.weixin.qq.com/s/x0eGoHowr7wbQlHJ455lQg
+有啥问题可以联系我
 
 # 关于我
 
